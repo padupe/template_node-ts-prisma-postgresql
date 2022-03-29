@@ -1,0 +1,11 @@
+{
+    "openapi": "3.0.0",
+    "info": {
+        "title": "Template - Typescript / Prisma / PostgreSQL",
+        "description": "This is an Template for Node.js Project",
+        "version": "1.0.0",
+        "contact": {
+            "email": "peixoto.pauloeduardo@gmail.com"
+        }
+    }
+}
