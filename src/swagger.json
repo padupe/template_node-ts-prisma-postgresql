@@ -7,5 +7,117 @@
         "contact": {
             "email": "peixoto.pauloeduardo@gmail.com"
         }
+    },
+    "paths": {
+        "/users": {
+            "post": {
+                "tags": [
+                    "User"
+                ],
+                "summary": "Create a User.",
+                "description": "Register an user on App.",
+                "requestBody": {
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "$ref": "#definitions/CreateUser"
+                            }
+                        }
+                    }
+                },
+                "responses": {
+                    "200": {
+                        "description": "User Created",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#definitions/UserCreated"
+                                }
+                            }
+                        }
+                    },
+                    "500": {
+                        "description": "Internal server error.",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#definitions/ErrorServer"
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    },
+    "definitions": {
+        "CreateUser": {
+            "type": "object",
+            "properties": {
+                "name": {
+                    "type": "string"
+                },
+                "username": {
+                    "type": "string"
+                },
+                "email": {
+                    "type": "string"
+                },
+                "password": {
+                    "type": "string"
+                }
+            },
+            "example": {
+                "name": "Fulano",
+                "username": "fulano",
+                "email": "fulano@email.com",
+                "password": "123456"
+            }
+        },
+        "UserCreated": {
+            "type": "object",
+            "properties": {
+                "message": {
+                    "type": "string"
+                },
+                "user": {
+                    "type": "object",
+                    "properties": {
+                        "id": {
+                            "type": "string"
+                        },
+                        "username": {
+                            "type": "string"
+                        },
+                        "email": {
+                            "type": "string"
+                        }
+                    }
+                }
+            },
+            "example": {
+                "message": "User registered",
+                "user": {
+                    "id": "fc210d61-c64d-4067-af18-e49ad471d9d0",
+                    "username": "fulano",
+                    "email": "fulano@email.com"
+                }
+            }
+        },
+        "ErrorServer": {
+            "type": "object",
+            "properties": {
+                "status": {
+                    "type": "string"
+                },
+                "message": {
+                    "type": "string"
+                }
+            },
+            "example": {
+                "status": "error",
+                "message": "Internal server error - { description_error }"
+            }
+        }
     }
 }
