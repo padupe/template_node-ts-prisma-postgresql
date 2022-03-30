@@ -47,6 +47,35 @@
                         }
                     }
                 }
+            },
+            "get": {
+                "tags": [
+                    "User"
+                ],
+                "summary": "Find all Users.",
+                "description": "List Users Registered at App.",
+                "responses": {
+                    "200": {
+                        "description": "List Users",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#definitions/ListUsers"
+                                }
+                            }
+                        }
+                    },
+                    "500": {
+                        "description": "Internal server error.",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#definitions/ErrorServer"
+                                }
+                            }
+                        }
+                    }
+                }
             }
         }
     },
@@ -103,6 +132,35 @@
                     "email": "fulano@email.com"
                 }
             }
+        },
+        "ListUsers": {
+            "type": "array",
+            "items": {
+                "type": "object",
+                "properties": {
+                    "id": {
+                        "type": "string"
+                    },
+                    "name": {
+                        "type": "string"
+                    },
+                    "username": {
+                        "type": "string"
+                    }
+                }
+            },
+            "example": [
+                {
+                    "id": "fc210d61-c64d-4067-af18-e49ad471d9d0",
+                    "name": "Fulano",
+                    "username": "fulano"
+                },
+                {
+                    "id": "d6c7bbf6-f3a5-4aec-8a1e-e018acc8cc4f",
+                    "name": "User Controller",
+                    "username": "user-controller"
+                }
+            ]
         },
         "ErrorServer": {
             "type": "object",
