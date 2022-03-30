@@ -76,7 +76,7 @@ yarn dev
 
 #### Docker
 ```
-docker-compose -f docker/docker-compose.yaml up -d
+docker-compose -f docker/docker-compose.yaml --env-file docker/.env up -d
 ```
 
 #### Aplicação
