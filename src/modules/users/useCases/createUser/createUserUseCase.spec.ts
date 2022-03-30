@@ -32,7 +32,7 @@ describe("Create User", () => {
 
     it("Should be able to create a new User", async () => {
 
-        let newUser = await createUserUseCase.execute({
+        await createUserUseCase.execute({
             name: userTest.name,
             username: userTest.username,
             email: userTest.email,
