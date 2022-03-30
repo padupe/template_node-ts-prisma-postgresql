@@ -24,7 +24,15 @@ export class UsersRepository implements IUsersRepository {
     }
 
     async findAll(): Promise<Users[]> {
-        const users = await this.repository.users.findMany({})
+        const users = await this.repository.users.findMany({
+            select: {
+                id: true,
+                name: true,
+                username: true
+            }
+        })
+
+        //@ts-ignore
         return users
     }
 
