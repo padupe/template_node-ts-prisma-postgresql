@@ -5,6 +5,7 @@ import { IResponseCreateUserDTO } from "@modules/users/dtos/IResponseCreateUserD
 import { IUsersRepository } from "@modules/users/repositories/IUsersRepository";
 import { AppError } from "@shared/errors/appError";
 import { inject, injectable } from "tsyringe";
+import { validateBodyCreateUser } from "@helpers/validateBodyUsers";
 
 @injectable()
 export class CreateUserUseCase {
@@ -15,9 +16,7 @@ export class CreateUserUseCase {
 
     async execute({ name, username, email, password }: ICreateUserDTO): Promise<IResponseCreateUserDTO> {
         
-        if(name === "" || username === "" || email === "" || password === "") {
-            throw new AppError("Invalid Parameters", 400)
-        }
+        validateBodyCreateUser({name, username, email, password})
         
         const usernameExists = await this.usersRepository.findByUsername(username)
         const emailExists = await this.usersRepository.findByEmail(email)
