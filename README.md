@@ -99,6 +99,19 @@ yarn prisma studio
 ```
 
 #### Testes Automatizados
+
+Para rodar todos os testes
 ```
 yarn test
 ```
+
+Para verificar o coverage dos testes
+```
+yarn test --coverage
+```
+
+Para rodar um teste específico
+```
+yarn test {path_to_test+extension_file}
+```
+*Exemplo:* `yarn test src/helpers/jsonwebtoken.spec.ts`
