@@ -8,7 +8,7 @@ export async function hashPassword(password: string) {
 export async function verifyPassword(password: string, comparePassword: string) {
     const result = await compare(password, comparePassword)
     
-    if (result == false) {
+    if (result === false) {
         throw new AppError("User or Password Invalids", 401)
     }
 
