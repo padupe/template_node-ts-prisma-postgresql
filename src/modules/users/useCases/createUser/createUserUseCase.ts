@@ -15,6 +15,10 @@ export class CreateUserUseCase {
 
     async execute({ name, username, email, password }: ICreateUserDTO): Promise<IResponseCreateUserDTO> {
         
+        if(name === "" || username === "" || email === "" || password === "") {
+            throw new AppError("Invalid Parameters", 400)
+        }
+        
         const usernameExists = await this.usersRepository.findByUsername(username)
         const emailExists = await this.usersRepository.findByEmail(email)
 
