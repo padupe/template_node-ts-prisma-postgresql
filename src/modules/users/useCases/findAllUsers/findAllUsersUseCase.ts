@@ -11,8 +11,6 @@ export class FindAllUsersUseCase {
 
     async execute() {
 
-        const users = await this.usersRepository.findAll()
-
-        return users
+        return this.usersRepository.findAll()
     }
 }
