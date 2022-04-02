@@ -36,6 +36,16 @@
                             }
                         }
                     },
+                    "422": {
+                        "description": "Invalid Parameters",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#definitions/CreateUserInvalidParameters"
+                                }
+                            }
+                        }
+                    },
                     "500": {
                         "description": "Internal server error.",
                         "content": {
@@ -61,6 +71,68 @@
                             "application/json": {
                                 "schema": {
                                     "$ref": "#definitions/ListUsers"
+                                }
+                            }
+                        }
+                    },
+                    "500": {
+                        "description": "Internal server error.",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#definitions/ErrorServer"
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "/users/{email}": {
+            "get": {
+                "tags": [
+                    "User"
+                ],
+                "summary": "Find an User by email address",
+                "description": "Show an User by email address",
+                "parameters": [
+                    {
+                        "name": "email",
+                        "in": "path",
+                        "description": "Email Address",
+                        "required": true,
+                        "schema": {
+                            "type": "string"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Show an User",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#definitions/ShowUser"
+                                }
+                            }
+                        }
+                    },
+                    "403": {
+                        "description": "User not found",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#definitions/UserNotFound"
+                                }
+                            }
+                        }
+                    },
+                    "422": {
+                        "description": "Invalid Parameters",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#definitions/InvalidParameters"
                                 }
                             }
                         }
@@ -162,6 +234,47 @@
                 }
             ]
         },
+        "ShowUser": {
+            "type": "object",
+            "properties": {
+                "message": {
+                    "type": "string"
+                },
+                "user": {
+                    "type": "object",
+                    "properties": {
+                        "id": {
+                            "type": "string"
+                        },
+                        "username": {
+                            "type": "string"
+                        },
+                        "email": {
+                            "type": "string"
+                        }
+                    }
+                }
+            },
+            "example": {
+                "message": "User found!",
+                "user": {
+                    "id": "fc210d61-c64d-4067-af18-e49ad471d9d0",
+                    "username": "fulano",
+                    "email": "fulano@email.com"
+                }
+            }
+        },
+        "UserNotFound": {
+            "type": "object",
+            "properties": {
+                "message": {
+                    "type": "string"
+                }
+            },
+            "example": {
+                "message": "User not found!"
+            }
+        },
         "ErrorServer": {
             "type": "object",
             "properties": {
@@ -175,6 +288,84 @@
             "example": {
                 "status": "error",
                 "message": "Internal server error - { description_error }"
+            }
+        },
+        "InvalidParameters": {
+            "type": "object",
+            "properties": {
+                "message": {
+                    "type": "string"
+                }
+            },
+            "example": {
+                "mesage": "Invalid Parameters"
+            }
+        },
+        "InvalidEmail": {
+            "type": "object",
+            "properties": {
+                "message": {
+                    "type": "string"
+                }
+            },
+            "example": {
+                "mesage": "Invalid Email"
+            }
+        },
+        "InvalidPassword": {
+            "type": "object",
+            "properties": {
+                "message": {
+                    "type": "string"
+                }
+            },
+            "example": {
+                "mesage": "Invalid Password"
+            }
+        },
+        "InvalidName": {
+            "type": "object",
+            "properties": {
+                "message": {
+                    "type": "string"
+                }
+            },
+            "example": {
+                "mesage": "Invalid Name"
+            }
+        },
+        "InvalidUsername": {
+            "type": "object",
+            "properties": {
+                "message": {
+                    "type": "string"
+                }
+            },
+            "example": {
+                "mesage": "Invalid Username"
+            }
+        },
+        "CreateUserInvalidParameters": {
+            "type": "array",
+            "items": {
+                "type": "object",
+                "oneOf": [
+                    {
+                        "$ref": "#definitions/InvalidName"
+                    },
+                    {
+                        "$ref": "#definitions/InvalidUsername"
+                    },
+                    {
+                        "$ref": "#definitions/InvalidEmail"
+                    },
+                    {
+                        "$ref": "#definitions/InvalidPassword"
+                    },
+                    {
+                        "$ref": "#definitions/InvalidParameters"
+                    }
+                ]
             }
         }
     }
