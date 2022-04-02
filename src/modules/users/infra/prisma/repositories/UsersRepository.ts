@@ -28,7 +28,8 @@ export class UsersRepository implements IUsersRepository {
             select: {
                 id: true,
                 name: true,
-                username: true
+                username: true,
+                email: true
             }
         })
 
