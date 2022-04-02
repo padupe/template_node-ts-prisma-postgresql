@@ -127,16 +127,6 @@
                             }
                         }
                     },
-                    "422": {
-                        "description": "Invalid Parameters",
-                        "content": {
-                            "application/json": {
-                                "schema": {
-                                    "$ref": "#definitions/InvalidParameters"
-                                }
-                            }
-                        }
-                    },
                     "500": {
                         "description": "Internal server error.",
                         "content": {
