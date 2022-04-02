@@ -8,6 +8,13 @@ let bodySuccess = {
     password: "passwordSample"
 }
 
+let bodyFailure = {
+    name: "",
+    username: "",
+    email: "",
+    password: ""
+}
+
 let bodyFailureName = {
     name: "",
     username: "sample_user",
@@ -42,6 +49,15 @@ describe("ValidateBodyUser function", () => {
 
         let test = validateBodyCreateUser(bodySuccess)
         expect(test).toBeTruthy()
+    })
+
+    it("ValidateBodyUser failure All", () => {
+
+        try {
+            validateBodyCreateUser(bodyFailure)
+        } catch (error) {
+            expect(error).toBeInstanceOf(AppError)
+        }
     })
 
     it("ValidateBodyUser failure name", () => {
