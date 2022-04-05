@@ -88,7 +88,7 @@
                 }
             }
         },
-        "/users/{email}": {
+        "/users/email/{email}": {
             "get": {
                 "tags": [
                     "User"
@@ -102,7 +102,7 @@
                         "description": "Email Address",
                         "required": true,
                         "schema": {
-                            "type": "string"
+                            "$ref": "#definitions/Email"
                         }
                     }
                 ],
@@ -127,6 +127,78 @@
                             }
                         }
                     },
+                    "422": {
+                        "description": "Internal server error.",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#definitions/InvalidParameters"
+                                }
+                            }
+                        }
+                    },
+                    "500": {
+                        "description": "Internal server error.",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#definitions/ErrorServer"
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "/users/username/{username}": {
+            "get": {
+                "tags": [
+                    "User"
+                ],
+                "summary": "Find an User by username",
+                "description": "Show an User by username",
+                "parameters": [
+                    {
+                        "name": "username",
+                        "in": "path",
+                        "description": "Username",
+                        "required": true,
+                        "schema": {
+                            "$ref": "#definitions/Username"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Show an User",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#definitions/ShowUser"
+                                }
+                            }
+                        }
+                    },
+                    "403": {
+                        "description": "User not found",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#definitions/UserNotFound"
+                                }
+                            }
+                        }
+                    },
+                    "422": {
+                        "description": "Internal server error.",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#definitions/InvalidParameters"
+                                }
+                            }
+                        }
+                    },
                     "500": {
                         "description": "Internal server error.",
                         "content": {
@@ -142,6 +214,14 @@
         }
     },
     "definitions": {
+        "Email": {
+            "type": "string",
+            "example": "usertest@email.com"
+        },
+        "Username": {
+            "type": "string",
+            "example": "usertest"
+        },
         "CreateUser": {
             "type": "object",
             "properties": {
