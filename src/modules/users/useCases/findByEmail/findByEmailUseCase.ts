@@ -1,5 +1,5 @@
 import "reflect-metadata"
-import { validateParamString } from "@helpers/validateParam";
+import { validateParamString } from "validation/validateParam";
 import { IResponseFindUser } from "@modules/users/dtos/IResponseFindUserDTO";
 import { IUsersRepository } from "@modules/users/repositories/IUsersRepository";
 import { AppError } from "@shared/errors/appError";
