@@ -10,7 +10,8 @@
       "@config/*": ["config/*"],
       "@shared/*": ["shared/*"],
       "@errors/*": ["errors/*"],
-      "@helpers/*": ["helpers/*"]
+      "@auth/*": ["auth/*"],
+      "@validation/*": ["validation/*"]
     },
     "sourceMap": true,
     "outDir": "dist",
