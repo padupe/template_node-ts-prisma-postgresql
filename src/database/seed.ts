@@ -1,5 +1,5 @@
 import { prisma } from "./prismaClient"
-import { hashPassword } from "../helpers/bcrypt"
+import { hashPassword } from "../auth/bcrypt"
 
 export const userDefault = {
     name: "User Test",
