@@ -1,6 +1,6 @@
 import "reflect-metadata"
-import { validateParamString } from "validation/validateParam"
-import { IResponseFindUser } from "@modules/users/dtos/IResponseFindUserDTO"
+import { validateParamString } from "@validation/validateParam"
+import { IResponseFindUserDTO } from "@modules/users/dtos/IResponseFindUserDTO"
 import { IUsersRepository } from "@modules/users/repositories/IUsersRepository"
 import { AppError } from "@shared/errors/appError"
 import { inject, injectable } from "tsyringe"
@@ -16,7 +16,7 @@ export class FindUserByUsernameUseCase {
         private usersRepository: IUsersRepository
     ){}
 
-    async execute({ username }: IFindUserByUsername): Promise<IResponseFindUser> {
+    async execute({ username }: IFindUserByUsername): Promise<IResponseFindUserDTO> {
 
         validateParamString(username)
 
