@@ -114,4 +114,4 @@ Para rodar um teste específico
 ```
 yarn test {path_to_test+extension_file}
 ```
-*Exemplo:* `yarn test src/helpers/jsonwebtoken.spec.ts`
+*Exemplo:* `yarn test src/auth/jsonwebtoken.spec.ts`
