@@ -1,4 +1,4 @@
-export interface IResponseFindUser {
+export interface IResponseFindUserDTO {
     message: string;
     user: Object;
 }
