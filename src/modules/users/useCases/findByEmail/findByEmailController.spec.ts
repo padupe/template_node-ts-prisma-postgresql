@@ -15,7 +15,7 @@ describe("Find User by Email Controller", () => {
 
         let test = await usersRepository.findByEmail(userDefault.email)
 
-        const response = await request(app).get(`/users/${test.email}`)
+        const response = await request(app).get(`/users/email/${test.email}`)
 
         expect(response.status).toBe(200)
         expect.objectContaining("message")
@@ -26,7 +26,7 @@ describe("Find User by Email Controller", () => {
 
         let failedEmail = "fail"
 
-        const response = await request(app).get(`/users/${failedEmail}`)
+        const response = await request(app).get(`/users/email/${failedEmail}`)
 
         expect(response.status).toBe(403)
         expect.objectContaining("message")
