@@ -1,11 +1,11 @@
 import "reflect-metadata"
-import { hashPassword } from "@helpers/bcrypt";
+import { hashPassword } from "auth/bcrypt";
 import { ICreateUserDTO } from "@modules/users/dtos/ICreateUserDTO";
 import { IResponseCreateUserDTO } from "@modules/users/dtos/IResponseCreateUserDTO";
 import { IUsersRepository } from "@modules/users/repositories/IUsersRepository";
 import { AppError } from "@shared/errors/appError";
 import { inject, injectable } from "tsyringe";
-import { validateBodyCreateUser } from "@helpers/validateBodyUsers";
+import { validateBodyCreateUser } from "validation/validateBodyUsers";
 
 @injectable()
 export class CreateUserUseCase {
