@@ -323,6 +323,66 @@
                     }
                 }
             }
+        },
+        "/authenticate": {
+            "post": {
+                "tags": [
+                    "Authenticate"
+                ],
+                "summary": "Authenticate an User at App.",
+                "description": "Process Authetication an User at App.",
+                "requestBody": {
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "$ref": "#definitions/AuthenticateUser"
+                            }
+                        }
+                    }
+                },
+                "responses": {
+                    "200": {
+                        "description": "User Authenticated",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#definitions/UserAuthenticated"
+                                }
+                            }
+                        }
+                    },
+                    "401": {
+                        "description": "Unauthorized",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#definitions/UserOrPasswordInvalids"
+                                }
+                            }
+                        }
+                    },
+                    "422": {
+                        "description": "Invalid Parameters",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#definitions/AuthenticateUserInvalidParameters"
+                                }
+                            }
+                        }
+                    },
+                    "500": {
+                        "description": "Internal server error.",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#definitions/ErrorServer"
+                                }
+                            }
+                        }
+                    }
+                }
+            }
         }
     },
     "definitions": {
@@ -521,6 +581,47 @@
                 }
             }
         },
+        "AuthenticateUser": {
+            "type": "object",
+            "properties": {
+                "username": {
+                    "type": "string"
+                },
+                "password": {
+                    "type": "string"
+                }
+            },
+            "example": {
+                "username": "usertest",
+                "password": "A7v8xTemp16x"
+            }
+        },
+        "UserAuthenticated": {
+            "type": "object",
+            "properties": {
+                "message": {
+                    "type": "string"
+                },
+                "token": {
+                    "type": "string"
+                }
+            },
+            "example": {
+                "message": "User registered at App",
+                "token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJwYXlsb2FkIjp7InVzZXJJRCI6ImYyZDEyY2FiLTYxNDUtNDBiMi1iOGFkLTBiMjA5ZTViNDFhNyIsInVzZXJFbWFpbCI6Im1hcmlhQGVtYWlsLmNvbSJ9LCJpYXQiOjE2NDkyNDU4MzUsImV4cCI6MTY0OTI0NzYzNSwiaXNzIjoiVGVtcGxhdGVfTm9kZS1UUy1QcmlzbWEtUG9zdGdyZVNRTCJ9.tsLibT83An8RcKxH0OZ4fcdVS_YBXZ7yxEWwYHpQ3hw"
+            }
+        },
+        "UserOrPasswordInvalids": {
+            "type": "object",
+            "properties": {
+                "message": {
+                    "type": "string"
+                }
+            },
+            "example": {
+                "message": "User or Password Invalids"
+            }
+        },
         "ErrorServer": {
             "type": "object",
             "properties": {
@@ -649,6 +750,20 @@
                     },
                     {
                         "$ref": "#definitions/InvalidParameters"
+                    }
+                ]
+            }
+        },
+        "AuthenticateUserInvalidParameters": {
+            "type": "array",
+            "items": {
+                "type": "object",
+                "oneOf": [
+                    {
+                        "$ref": "#definitions/InvalidUsername"
+                    },
+                    {
+                        "$ref": "#definitions/InvalidPassword"
                     }
                 ]
             }
