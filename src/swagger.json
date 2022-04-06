@@ -15,7 +15,7 @@
                     "User"
                 ],
                 "summary": "Create a User.",
-                "description": "Register an user on App.",
+                "description": "Register at user on App.",
                 "requestBody": {
                     "content": {
                         "application/json": {
@@ -211,12 +211,128 @@
                     }
                 }
             }
+        },
+        "users/id/{id}": {
+            "get": {
+                "tags": [
+                    "User"
+                ],
+                "summary": "Find an User by id",
+                "description": "Show an User by id",
+                "parameters": [
+                    {
+                        "name": "username",
+                        "in": "path",
+                        "description": "Id",
+                        "required": true,
+                        "schema": {
+                            "$ref": "#definitions/Id"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Show an User by Id",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#definitions/ShowUserById"
+                                }
+                            }
+                        }
+                    },
+                    "403": {
+                        "description": "User not found",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#definitions/UserNotFound"
+                                }
+                            }
+                        }
+                    },
+                    "422": {
+                        "description": "Internal server error.",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#definitions/InvalidParameters"
+                                }
+                            }
+                        }
+                    },
+                    "500": {
+                        "description": "Internal server error.",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#definitions/ErrorServer"
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "/posts": {
+            "post": {
+                "tags": [
+                    "Post"
+                ],
+                "summary": "Create a Post.",
+                "description": "Register an post at App.",
+                "requestBody": {
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "$ref": "#definitions/CreatePost"
+                            }
+                        }
+                    }
+                },
+                "responses": {
+                    "200": {
+                        "description": "Post Created",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#definitions/PostCreated"
+                                }
+                            }
+                        }
+                    },
+                    "422": {
+                        "description": "Invalid Parameters",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#definitions/CreatePostInvalidParameters"
+                                }
+                            }
+                        }
+                    },
+                    "500": {
+                        "description": "Internal server error.",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#definitions/ErrorServer"
+                                }
+                            }
+                        }
+                    }
+                }
+            }
         }
     },
     "definitions": {
         "Email": {
             "type": "string",
             "example": "usertest@email.com"
+        },
+        "Id": {
+            "type": "string",
+            "example": "a78b-547as-tr632x-us3r"
         },
         "Username": {
             "type": "string",
@@ -334,6 +450,21 @@
                 }
             }
         },
+        "ShowUserById": {
+            "type": "object",
+            "properties": {
+                "id": {
+                    "type": "string"
+                },
+                "username": {
+                    "type": "string"
+                }
+            },
+            "example": {
+                "id": "8ab08780-9174-4a5e-a0d7-7f45d15a87f3",
+                "username": "usertest"
+            }
+        },
         "UserNotFound": {
             "type": "object",
             "properties": {
@@ -343,6 +474,51 @@
             },
             "example": {
                 "message": "User not found!"
+            }
+        },
+        "CreatePost": {
+            "type": "object",
+            "properties": {
+                "title": {
+                    "type": "string"
+                },
+                "author_id": {
+                    "type": "string"
+                }
+            },
+            "example": {
+                "title": "Sample Post Two",
+                "author_id": "8ab08780-9174-4a5e-a0d7-7f45d15a87f3"
+            }
+        },
+        "PostCreated": {
+            "type": "object",
+            "properties": {
+                "message": {
+                    "type": "string"
+                },
+                "post": {
+                    "type": "object",
+                    "properties": {
+                        "id": {
+                            "type": "string"
+                        },
+                        "title": {
+                            "type": "string"
+                        },
+                        "author": {
+                            "type": "string"
+                        }
+                    }
+                }
+            },
+            "example": {
+                "message": "Post registered",
+                "post": {
+                    "id": "81a16766-95e5-4b49-9fd8-461a73f242ce",
+                    "title": "81a16766-95e5-4b49-9fd8-461a73f242ce",
+                    "author": "usertest"
+                }
             }
         },
         "ErrorServer": {
@@ -415,6 +591,28 @@
                 "mesage": "Invalid Username"
             }
         },
+        "InvalidTitle": {
+            "type": "object",
+            "properties": {
+                "message": {
+                    "type": "string"
+                }
+            },
+            "example": {
+                "mesage": "Invalid Title"
+            }
+        },
+        "InvalidAuthorId": {
+            "type": "object",
+            "properties": {
+                "message": {
+                    "type": "string"
+                }
+            },
+            "example": {
+                "mesage": "Invalid Author ID"
+            }
+        },
         "CreateUserInvalidParameters": {
             "type": "array",
             "items": {
@@ -431,6 +629,23 @@
                     },
                     {
                         "$ref": "#definitions/InvalidPassword"
+                    },
+                    {
+                        "$ref": "#definitions/InvalidParameters"
+                    }
+                ]
+            }
+        },
+        "CreatePostInvalidParameters": {
+            "type": "array",
+            "items": {
+                "type": "object",
+                "oneOf": [
+                    {
+                        "$ref": "#definitions/InvalidTitle"
+                    },
+                    {
+                        "$ref": "#definitions/InvalidAuthorId"
                     },
                     {
                         "$ref": "#definitions/InvalidParameters"
