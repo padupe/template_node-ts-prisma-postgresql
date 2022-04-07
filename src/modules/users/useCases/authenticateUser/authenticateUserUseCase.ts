@@ -1,3 +1,4 @@
+import "reflect-metadata"
 import { verifyPassword } from "@auth/bcrypt";
 import { signJWT } from "@auth/jsonWebToken";
 import auth from "@config/auth";
@@ -6,6 +7,7 @@ import { IResponseAuthenticateUserDTO } from "@modules/users/dtos/IResponseAuthe
 import { IUsersRepository } from "@modules/users/repositories/IUsersRepository";
 import { validateBodyAuth } from "@validation/validateBodyAuth";
 import { inject, injectable } from "tsyringe"
+import { AppError } from "@shared/errors/appError";
 
 @injectable()
 export class AuthenticateUserUseCase {
@@ -21,6 +23,10 @@ export class AuthenticateUserUseCase {
         const { secret_key, options } = auth
 
         const user = await this.usersRepository.findByUsername(username)
+
+        if(!user) {
+            throw new AppError("User or Password Invalids", 401)
+        }
 
         const userID = user.id
         const userEmail = user.email
