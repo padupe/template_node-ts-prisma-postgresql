@@ -12,6 +12,7 @@ describe("Create Post", () => {
 
     beforeEach(() => {
         postsRepository = new PostsRepository()
+        usersRepository = new UsersRepository()
         createPostUseCase = new CreatePostUseCase(postsRepository)
     })
 
