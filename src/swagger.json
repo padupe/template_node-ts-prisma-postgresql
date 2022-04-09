@@ -274,56 +274,6 @@
                 }
             }
         },
-        "/posts": {
-            "post": {
-                "tags": [
-                    "Post"
-                ],
-                "summary": "Create a Post.",
-                "description": "Register an post at App.",
-                "requestBody": {
-                    "content": {
-                        "application/json": {
-                            "schema": {
-                                "$ref": "#definitions/CreatePost"
-                            }
-                        }
-                    }
-                },
-                "responses": {
-                    "200": {
-                        "description": "Post Created",
-                        "content": {
-                            "application/json": {
-                                "schema": {
-                                    "$ref": "#definitions/PostCreated"
-                                }
-                            }
-                        }
-                    },
-                    "422": {
-                        "description": "Invalid Parameters",
-                        "content": {
-                            "application/json": {
-                                "schema": {
-                                    "$ref": "#definitions/CreatePostInvalidParameters"
-                                }
-                            }
-                        }
-                    },
-                    "500": {
-                        "description": "Internal server error.",
-                        "content": {
-                            "application/json": {
-                                "schema": {
-                                    "$ref": "#definitions/ErrorServer"
-                                }
-                            }
-                        }
-                    }
-                }
-            }
-        },
         "/authenticate": {
             "post": {
                 "tags": [
@@ -367,6 +317,91 @@
                             "application/json": {
                                 "schema": {
                                     "$ref": "#definitions/AuthenticateUserInvalidParameters"
+                                }
+                            }
+                        }
+                    },
+                    "500": {
+                        "description": "Internal server error.",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#definitions/ErrorServer"
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "/posts": {
+            "post": {
+                "tags": [
+                    "Post"
+                ],
+                "summary": "Create a Post.",
+                "description": "Register an post at App.",
+                "security": [
+                    {
+                        "bearerAuth": []
+                    }
+                ],
+                "requestBody": {
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "$ref": "#definitions/CreatePost"
+                            }
+                        }
+                    }
+                },
+                "responses": {
+                    "200": {
+                        "description": "Post Created",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#definitions/PostCreated"
+                                }
+                            }
+                        }
+                    },
+                    "400": {
+                        "description": "User not Found",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#definitions/UserNotFound"
+                                }
+                            }
+                        }
+                    },
+                    "401": {
+                        "description": "Unauthorized",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#definitions/InvalidToken"
+                                }
+                            }
+                        }
+                    },
+                    "403": {
+                        "description": "Forbidden",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#definitions/TokenMissing"
+                                }
+                            }
+                        }
+                    },
+                    "422": {
+                        "description": "Invalid Title",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#definitions/InvalidTitle"
                                 }
                             }
                         }
@@ -541,14 +576,10 @@
             "properties": {
                 "title": {
                     "type": "string"
-                },
-                "author_id": {
-                    "type": "string"
                 }
             },
             "example": {
-                "title": "Sample Post Two",
-                "author_id": "8ab08780-9174-4a5e-a0d7-7f45d15a87f3"
+                "title": "Sample Post"
             }
         },
         "PostCreated": {
@@ -703,7 +734,7 @@
                 "mesage": "Invalid Title"
             }
         },
-        "InvalidAuthorId": {
+        "InvalidToken": {
             "type": "object",
             "properties": {
                 "message": {
@@ -711,7 +742,18 @@
                 }
             },
             "example": {
-                "mesage": "Invalid Author ID"
+                "mesage": "Invalid Token"
+            }
+        },
+        "TokenMissing": {
+            "type": "object",
+            "properties": {
+                "message": {
+                    "type": "string"
+                }
+            },
+            "example": {
+                "mesage": "Token Missing"
             }
         },
         "CreateUserInvalidParameters": {
@@ -737,23 +779,6 @@
                 ]
             }
         },
-        "CreatePostInvalidParameters": {
-            "type": "array",
-            "items": {
-                "type": "object",
-                "oneOf": [
-                    {
-                        "$ref": "#definitions/InvalidTitle"
-                    },
-                    {
-                        "$ref": "#definitions/InvalidAuthorId"
-                    },
-                    {
-                        "$ref": "#definitions/InvalidParameters"
-                    }
-                ]
-            }
-        },
         "AuthenticateUserInvalidParameters": {
             "type": "array",
             "items": {
@@ -766,6 +791,15 @@
                         "$ref": "#definitions/InvalidPassword"
                     }
                 ]
+            }
+        }
+    },
+    "components": {
+        "securitySchemes": {
+            "bearerAuth": {
+                "type": "http",
+                "scheme": "bearer",
+                "bearerFormat": "JWT"
             }
         }
     }
