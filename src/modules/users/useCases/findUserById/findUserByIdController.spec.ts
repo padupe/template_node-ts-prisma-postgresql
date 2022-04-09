@@ -15,8 +15,6 @@ describe("Find User by Id Controller", () => {
 
         let test = await usersRepository.findByUsername(userDefault.username)
 
-        console.log(test)
-
         const response = await request(app).get(`/users/id/${test.id}`)
 
         expect(response.status).toBe(200)
