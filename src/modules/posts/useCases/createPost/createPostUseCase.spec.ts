@@ -28,4 +28,14 @@ describe("Create Post", () => {
         expect(test).toHaveProperty("message")
         expect(test).toHaveProperty("post")
     })
+
+    it("Should not be able to create a new Post with invalid Title", async () => {
+
+        let author = await usersRepository.findByUsername(userDefault.username)
+
+        await expect(createPostUseCase.execute({
+            title: "",
+            author_id: author.id
+        })).rejects.toEqual(new AppError("Invalid Title", 422))
+    })
 })
