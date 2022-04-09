@@ -1,4 +1,4 @@
-import { Posts, PrismaClient, Users } from "@prisma/client"
+import { Posts, PrismaClient } from "@prisma/client"
 import { prisma } from "@database/prismaClient"
 import { IPostsRepository } from "@modules/posts/repositories/IPostsRepository"
 import { ICreatePostDTO } from "@modules/posts/dtos/ICreatePostDTO"
@@ -14,7 +14,7 @@ export class PostsRepository implements IPostsRepository {
         const post = await this.repository.posts.create({
             data: {
                 title,
-                author: author_id
+                author: author_id as string
             }
         })
 
