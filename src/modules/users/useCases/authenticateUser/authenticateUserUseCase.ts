@@ -33,7 +33,12 @@ export class AuthenticateUserUseCase {
 
         await verifyPassword(password, user.password)
 
-        const token = signJWT({userID, userEmail}, String(secret_key), options)
+        const token = signJWT({userEmail}, String(secret_key), {
+            algorithm: options.algorithm,
+            issuer: options.issuer,
+            expiresIn: options.expiresIn,
+            subject: userID,
+        })
 
         return {
             message: "User registered at App",
