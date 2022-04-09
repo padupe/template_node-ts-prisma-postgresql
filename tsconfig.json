@@ -11,7 +11,8 @@
       "@shared/*": ["shared/*"],
       "@errors/*": ["errors/*"],
       "@auth/*": ["auth/*"],
-      "@validation/*": ["validation/*"]
+      "@validation/*": ["validation/*"],
+      "@middlewares/*": ["middlewares/*"]
     },
     "sourceMap": true,
     "outDir": "dist",
