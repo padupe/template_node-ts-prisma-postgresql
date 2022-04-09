@@ -3,18 +3,14 @@ import { ICreatePostDTO } from "@modules/posts/dtos/ICreatePostDTO"
 import { IPostsRepository } from "@modules/posts/repositories/IPostsRepository"
 import { inject, injectable } from "tsyringe"
 import { IResponseCreatePostDTO } from "@modules/posts/dtos/IResponseCreatePostDTO"
-import { IUsersRepository } from "@modules/users/repositories/IUsersRepository"
-import { AppError } from "@shared/errors/appError"
 import { validateBodyPosts } from "@validation/validateBodyPosts"
+import { validateAuthorId } from "@validation/validateAuthorId"
 
 @injectable()
 export class CreatePostUseCase {
     constructor(
         @inject("PostsRepository")
-        private postsRepository: IPostsRepository,
-
-        @inject("UsersRepository")
-        private usersRepository: IUsersRepository
+        private postsRepository: IPostsRepository
     ){}
 
     async execute({ title, author_id }: ICreatePostDTO): Promise<IResponseCreatePostDTO>{
@@ -28,11 +24,7 @@ export class CreatePostUseCase {
 
         const author: string = author_id !== undefined ? author_id : ""
 
-        const user = await this.usersRepository.findById(author)
-
-        if(!user) {
-            throw new AppError("User not found!", 400)
-        }
+        const user = await validateAuthorId(author)
 
         return {
             message: "Post registered",
