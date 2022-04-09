@@ -19,10 +19,19 @@ describe("ValidateAuthorId function", () => {
         expect(test).toBeTruthy()
     })
 
-    it("ValidateAuthorId failure", async () => {
+    it("ValidateAuthorId with failure Id", async () => {
 
         try {
             await validateAuthorId("fail")
+        } catch(error) {
+            expect(error).toBeInstanceOf(AppError)
+        }
+    })
+
+    it("ValidateAuthorId failure", async () => {
+
+        try {
+            await validateAuthorId("")
         } catch(error) {
             expect(error).toBeInstanceOf(AppError)
         }
