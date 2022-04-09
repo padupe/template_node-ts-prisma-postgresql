@@ -36,4 +36,13 @@ describe("ValidateAuthorId function", () => {
             expect(error).toBeInstanceOf(AppError)
         }
     })
+
+    it("ValidateAuthorId with blank String", async () => {
+
+        try {
+            await validateAuthorId(String())
+        } catch(error) {
+            expect(error).toBeInstanceOf(AppError)
+        }
+    })
 })
