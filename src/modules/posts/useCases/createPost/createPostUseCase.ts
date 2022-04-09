@@ -19,17 +19,19 @@ export class CreatePostUseCase {
 
     async execute({ title, author_id }: ICreatePostDTO): Promise<IResponseCreatePostDTO>{
 
-        validateBodyPosts({ title, author_id })
+        validateBodyPosts({ title })
 
         const post = await this.postsRepository.create({
             title,
             author_id
         })
 
-        const user = await this.usersRepository.findById(author_id)
+        const author: string = author_id !== undefined ? author_id : ""
+
+        const user = await this.usersRepository.findById(author)
 
         if(!user) {
-            throw new AppError("User not found!", 403)
+            throw new AppError("User not found!", 400)
         }
 
         return {
