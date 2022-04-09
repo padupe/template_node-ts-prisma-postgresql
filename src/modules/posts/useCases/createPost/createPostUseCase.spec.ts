@@ -11,9 +11,8 @@ let postsRepository: PostsRepository
 describe("Create Post", () => {
 
     beforeEach(() => {
-        usersRepository = new UsersRepository()
         postsRepository = new PostsRepository()
-        createPostUseCase = new CreatePostUseCase(postsRepository, usersRepository)
+        createPostUseCase = new CreatePostUseCase(postsRepository)
     })
 
     it("Should be able to create a new Post", async () => {
