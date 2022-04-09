@@ -2,7 +2,6 @@ import { AppError } from "@shared/errors/appError"
 import { validateParamString } from "./validateParam"
 
 let validParam = "teste"
-console.log(validParam)
 let failureParam = ""
 
 describe("ValidateParam function", () => {
