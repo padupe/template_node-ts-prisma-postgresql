@@ -3,22 +3,10 @@ import { validateBodyPosts } from "./validateBodyPosts"
 
 let bodySuccess = {
     title: "Title Success",
-    author_id: "789-asd6-45cv7"
 }
 
 let bodyFailure = {
-    title: "",
-    author_id: ""
-}
-
-let bodyFailureTitle = {
-    title: "Title Failure",
-    author_id: "789-asd6-45cv7"
-}
-
-let bodyFailureAuthorID = {
-    title: "Title Failure",
-    author_id: ""
+    title: ""
 }
 
 describe("ValidateBodyPost function", () => {
@@ -33,24 +21,6 @@ describe("ValidateBodyPost function", () => {
 
         try {
             validateBodyPosts(bodyFailure)
-        } catch (error) {
-            expect(error).toBeInstanceOf(AppError)
-        }
-    })
-
-    it("ValidateBodyPost failure Title", () => {
-
-        try {
-            validateBodyPosts(bodyFailureTitle)
-        } catch (error) {
-            expect(error).toBeInstanceOf(AppError)
-        }
-    })
-
-    it("ValidateBodyPost failure Author ID", () => {
-
-        try {
-            validateBodyPosts(bodyFailureAuthorID)
         } catch (error) {
             expect(error).toBeInstanceOf(AppError)
         }
