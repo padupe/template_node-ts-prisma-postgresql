@@ -16,7 +16,6 @@ describe("ValidateAuthorId function", () => {
         let author = await usersRepository.findByUsername(userDefault.username)
 
         let test = await validateAuthorId(author.id)
-        console.log(test)
         expect(test).toBeTruthy()
     })
 
