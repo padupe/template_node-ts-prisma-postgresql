@@ -30,7 +30,7 @@ export class CreatePostUseCase {
             message: "Post registered",
             post: {
                 id: post.id,
-                title: post.id,
+                title: post.title,
                 author: user.username
             }
         }
