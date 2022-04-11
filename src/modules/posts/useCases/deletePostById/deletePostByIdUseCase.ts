@@ -1,11 +1,10 @@
 import "reflect-metadata"
-import { IPostsRepository } from "@modules/posts/repositories/IPostsRepository";
-import { validateParamString } from "@validation/validateParam";
-import { inject, injectable } from "tsyringe";
-import { AppError } from "@shared/errors/appError";
-import { validateAuthorId } from "@validation/validateAuthorId";
-import { ValidateAllowedAuthor } from "@validation/validateAllowedAuthor";
-import { IResponseDeletePostDTO } from "@modules/posts/dtos/IResponseDeletePostDTO";
+import { IPostsRepository } from "@modules/posts/repositories/IPostsRepository"
+import { validateParamString } from "@validation/validateParam"
+import { inject, injectable } from "tsyringe"
+import { AppError } from "@shared/errors/appError"
+import { ValidateAllowedAuthor } from "@validation/validateAllowedAuthor"
+import { IResponseDeletePostDTO } from "@modules/posts/dtos/IResponseDeletePostDTO"
 
 @injectable()
 export class DeletePostByIdUseCase {
