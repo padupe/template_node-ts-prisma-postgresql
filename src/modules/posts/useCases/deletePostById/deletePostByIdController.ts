@@ -10,8 +10,8 @@ export class DeletePostByIDController {
         const { id } = request.params
 
         const deletePostByIdUseCase = container.resolve(DeletePostByIdUseCase)
-        await deletePostByIdUseCase.execute(id, author_id)
+        const post = await deletePostByIdUseCase.execute(id, author_id)
 
-        return response.json(200)
+        return response.status(200).json(post)
     }
 }
