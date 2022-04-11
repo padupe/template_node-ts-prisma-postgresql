@@ -5,6 +5,7 @@ import { inject, injectable } from "tsyringe";
 import { AppError } from "@shared/errors/appError";
 import { validateAuthorId } from "@validation/validateAuthorId";
 import { ValidateAllowedAuthor } from "@validation/validateAllowedAuthor";
+import { IResponseDeletePostDTO } from "@modules/posts/dtos/IResponseDeletePostDTO";
 
 @injectable()
 export class DeletePostByIdUseCase {
@@ -13,7 +14,7 @@ export class DeletePostByIdUseCase {
         private postsRepository: IPostsRepository
     ){}
 
-    async execute(post_id: string, author_id: string): Promise<void> {
+    async execute(post_id: string, author_id: string): Promise<IResponseDeletePostDTO> {
 
         await validateParamString(post_id)
 
@@ -27,5 +28,15 @@ export class DeletePostByIdUseCase {
         await ValidateAllowedAuthor(post.user.id, author_id)
 
         await this.postsRepository.delete(post.id)
+
+        return {
+            message: "Post deleted",
+            post: {
+                id: post.id,
+                title: post.title,
+                //@ts-ignore
+                author: post.user.username
+            }
+        }
     }
 }
