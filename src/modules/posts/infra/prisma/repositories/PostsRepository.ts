@@ -31,7 +31,8 @@ export class PostsRepository implements IPostsRepository {
                 title: true,
                 user: {
                     select: {
-                        username: true
+                        username: true,
+                        id: true
                     }
                 }
             }
