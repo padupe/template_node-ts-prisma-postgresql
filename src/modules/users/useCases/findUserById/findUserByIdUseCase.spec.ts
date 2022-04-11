@@ -6,14 +6,14 @@ import { FindUserByIdUseCase } from "./findUserByIdUseCase"
 let findUserByIdUseCase: FindUserByIdUseCase
 let usersRepository: UsersRepository
 
-describe("Find an User by username", () => {
+describe("Find an User by Id", () => {
 
     beforeEach(() => {
         usersRepository = new UsersRepository()
         findUserByIdUseCase = new FindUserByIdUseCase(usersRepository)
     })
 
-    it("Should be able to show an user by username", async () => {
+    it("Should be able to show an user by Id", async () => {
 
         const userTest = await usersRepository.findByUsername(userDefault.username)
 
