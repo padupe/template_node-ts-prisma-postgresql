@@ -221,7 +221,7 @@
                 "description": "Show an User by id",
                 "parameters": [
                     {
-                        "name": "username",
+                        "name": "id",
                         "in": "path",
                         "description": "Id",
                         "required": true,
@@ -418,6 +418,143 @@
                     }
                 }
             }
+        },
+        "/posts/{id}": {
+            "get": {
+                "tags": [
+                    "Post"
+                ],
+                "summary": "Get an Post by Id",
+                "description": "Show an Post by Id",
+                "parameters": [
+                    {
+                        "name": "id",
+                        "in": "path",
+                        "description": "Id",
+                        "required": true,
+                        "schema": {
+                            "$ref": "#definitions/Id"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Show an Post by Id",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#definitions/ShowPost"
+                                }
+                            }
+                        }
+                    },
+                    "400": {
+                        "description": "Invalid Post Id",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#definitions/InvalidPostId"
+                                }
+                            }
+                        }
+                    },
+                    "422": {
+                        "description": "Invalid Parameter",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#definitions/InvalidParameters"
+                                }
+                            }
+                        }
+                    },
+                    "500": {
+                        "description": "Internal server error.",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#definitions/ErrorServer"
+                                }
+                            }
+                        }
+                    }
+                }
+            },
+            "delete": {
+                "tags": [
+                    "Post"
+                ],
+                "summary": "Delete an Post by Id",
+                "description": "User Authenticate Delete an Post by Id",
+                "parameters": [
+                    {
+                        "name": "id",
+                        "in": "path",
+                        "description": "Id",
+                        "required": true,
+                        "schema": {
+                            "$ref": "#definitions/Id"
+                        }
+                    }
+                ],
+                "security": [
+                    {
+                        "bearerAuth": []
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Post deleted",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#definitions/PostDeleted"
+                                }
+                            }
+                        }
+                    },
+                    "400": {
+                        "description": "Invalid Post Id",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#definitions/InvalidPostId"
+                                }
+                            }
+                        }
+                    },
+                    "401": {
+                        "description": "Unauthorized",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#definitions/InvalidToken"
+                                }
+                            }
+                        }
+                    },
+                    "422": {
+                        "description": "Invalid Parameter",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#definitions/InvalidParameters"
+                                }
+                            }
+                        }
+                    },
+                    "500": {
+                        "description": "Internal server error.",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#definitions/ErrorServer"
+                                }
+                            }
+                        }
+                    }
+                }
+            }
         }
     },
     "definitions": {
@@ -558,6 +695,77 @@
             "example": {
                 "id": "8ab08780-9174-4a5e-a0d7-7f45d15a87f3",
                 "username": "usertest"
+            }
+        },
+        "ShowPost": {
+            "type": "object",
+            "properties": {
+                "id": {
+                    "type": "string"
+                },
+                "title": {
+                    "type": "string"
+                },
+                "author": {
+                    "type": "object",
+                    "properties": {
+                        "id": {
+                            "type": "string"
+                        },
+                        "username": {
+                            "type": "string"
+                        }
+                    }
+                }
+            },
+            "example": {
+                "id": "7ca6f2c5-821a-43dd-a73d-b58465a54ec1",
+                "title": "Example Post",
+                "author": {
+                    "id": "f6484499-9f03-4f97-8d1c-78ea4f1bd54a",
+                    "username": "usertest"
+                }
+            }
+        },
+        "InvalidPostId": {
+            "type": "object",
+            "properties": {
+                "message": {
+                    "type": "string"
+                }
+            },
+            "example": {
+                "message": "Post not found!"
+            }
+        },
+        "PostDeleted": {
+            "type": "object",
+            "properties": {
+                "message": {
+                    "type": "string"
+                },
+                "post": {
+                    "type": "object",
+                    "properties": {
+                        "id": {
+                            "type": "string"
+                        },
+                        "title": {
+                            "type": "string"
+                        },
+                        "author": {
+                            "type": "string"
+                        }
+                    }
+                }
+            },
+            "example": {
+                "message": "Post deleted",
+                "post": {
+                    "id": "763f2cbe-9e37-4ee3-b4dd-c028357f7155",
+                    "title": "Sample",
+                    "author": "usertest"
+                }
             }
         },
         "UserNotFound": {
