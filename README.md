@@ -72,6 +72,9 @@ yarn dev
 [Swagger](http://localhost:3000/docs/)<br>
 *IMPORTANTE:* É necessário rodar o comando `yarn dev`
 
+### JSON para testes via Insomnia
+Realize o _import_ deste [arquivo](https://github.com/padupe/template_node-ts-prisma-postgresql/blob/master/insomnia/Insomnia.json "arquivo") no Insomnia.
+
 ### Comandos Úteis
 
 #### Docker
