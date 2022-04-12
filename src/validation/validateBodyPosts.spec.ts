@@ -13,14 +13,14 @@ describe("ValidateBodyPost function", () => {
     
     it("ValidateBodyPost successfully", () => {
 
-        let test = validateBodyPosts(bodySuccess)
+        let test = validateBodyPosts(bodySuccess.title)
         expect(test).toBeTruthy()
     })
 
     it("ValidateBodyPost failure All", () => {
 
         try {
-            validateBodyPosts(bodyFailure)
+            validateBodyPosts(bodyFailure.title)
         } catch (error) {
             expect(error).toBeInstanceOf(AppError)
         }
