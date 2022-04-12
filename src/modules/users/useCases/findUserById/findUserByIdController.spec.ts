@@ -24,9 +24,9 @@ describe("Find User by Id Controller", () => {
     
     it("Should not be able to show an User by invalid id", async () => {
 
-        let failedEmail = "fail"
+        let failedID = "fail"
 
-        const response = await request(app).get(`/users/id/${failedEmail}`)
+        const response = await request(app).get(`/users/id/${failedID}`)
 
         expect(response.status).toBe(403)
         expect.objectContaining("message")
