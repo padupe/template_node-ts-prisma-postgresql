@@ -118,6 +118,7 @@ yarn test --coverage
 <div align="center">
       <img align="center" alt="Coverage" src="https://github.com/padupe/template_node-ts-prisma-postgresql/blob/master/images/coverage.png">     
 </div>
+<br>
 
 Para rodar um teste específico
 ```
