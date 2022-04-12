@@ -70,7 +70,10 @@ yarn dev
 
 ### Documentação da API
 [Swagger](http://localhost:3000/docs/)<br>
-*IMPORTANTE:* É necessário rodar o comando `yarn dev`
+*IMPORTANTE:* É necessário rodar o comando `yarn dev`<br>
+<div align="center">
+      <img align="center" alt="Swagger" src="https://github.com/padupe/template_node-ts-prisma-postgresql/blob/master/images/swagger.png">     
+</div>
 
 ### JSON para testes via Insomnia
 Realize o _import_ deste [arquivo](https://github.com/padupe/template_node-ts-prisma-postgresql/blob/master/insomnia/Insomnia.json "arquivo") no Insomnia.
@@ -115,6 +118,9 @@ yarn test --coverage
 
 Para rodar um teste específico
 ```
-yarn test {path_to_test+extension_file}
+yarn test {path_to_test+file_name_whit_extension}
 ```
-*Exemplo:* `yarn test src/auth/jsonwebtoken.spec.ts`
+*Exemplo:* `yarn test src/auth/jsonwebtoken.spec.ts`<br>
+<div align="center">
+      <img align="center" alt="Coverage" src="https://github.com/padupe/template_node-ts-prisma-postgresql/blob/master/images/coverage.png">     
+</div>
