@@ -15,7 +15,7 @@ export class CreatePostUseCase {
 
     async execute({ title, author_id }: ICreatePostDTO): Promise<IResponseCreatePostDTO>{
 
-        validateBodyPosts({ title })
+        validateBodyPosts(title)
 
         const post = await this.postsRepository.create({
             title,
