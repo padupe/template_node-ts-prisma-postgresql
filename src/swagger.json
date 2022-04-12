@@ -554,6 +554,81 @@
                         }
                     }
                 }
+            },
+            "put": {
+                "tags": [
+                    "Post"
+                ],
+                "summary": "Update an Post by Id",
+                "description": "User Authenticate Update an Post by Id",
+                "parameters": [
+                    {
+                        "name": "id",
+                        "in": "path",
+                        "description": "Id",
+                        "required": true,
+                        "schema": {
+                            "$ref": "#definitions/Id"
+                        }
+                    }
+                ],
+                "security": [
+                    {
+                        "bearerAuth": []
+                    }
+                ],
+                "responses": {
+                    "202": {
+                        "description": "Post updated",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#definitions/PostUpdated"
+                                }
+                            }
+                        }
+                    },
+                    "400": {
+                        "description": "Invalid Post Id",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#definitions/InvalidPostId"
+                                }
+                            }
+                        }
+                    },
+                    "401": {
+                        "description": "Unauthorized",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#definitions/InvalidToken"
+                                }
+                            }
+                        }
+                    },
+                    "422": {
+                        "description": "Invalid Parameter",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#definitions/UpdatePostInvalidParameters"
+                                }
+                            }
+                        }
+                    },
+                    "500": {
+                        "description": "Internal server error.",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#definitions/ErrorServer"
+                                }
+                            }
+                        }
+                    }
+                }
             }
         }
     },
@@ -764,6 +839,36 @@
                 "post": {
                     "id": "763f2cbe-9e37-4ee3-b4dd-c028357f7155",
                     "title": "Sample",
+                    "author": "usertest"
+                }
+            }
+        },
+        "PostUpdated": {
+            "type": "object",
+            "properties": {
+                "message": {
+                    "type": "string"
+                },
+                "post": {
+                    "type": "object",
+                    "properties": {
+                        "id": {
+                            "type": "string"
+                        },
+                        "new_title": {
+                            "type": "string"
+                        },
+                        "author": {
+                            "type": "string"
+                        }
+                    }
+                }
+            },
+            "example": {
+                "message": "Post updated",
+                "post": {
+                    "id": "763f2cbe-9e37-4ee3-b4dd-c028357f7155",
+                    "new_title": "Update Title",
                     "author": "usertest"
                 }
             }
@@ -997,6 +1102,20 @@
                     },
                     {
                         "$ref": "#definitions/InvalidPassword"
+                    }
+                ]
+            }
+        },
+        "UpdatePostInvalidParameters": {
+            "type": "array",
+            "items": {
+                "type": "object",
+                "oneOf": [
+                    {
+                        "$ref": "#definitions/InvalidTitle"
+                    },
+                    {
+                        "$ref": "#definitions/InvalidParameters"
                     }
                 ]
             }
