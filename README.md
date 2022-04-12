@@ -115,12 +115,12 @@ Para verificar o coverage dos testes
 ```
 yarn test --coverage
 ```
+*Exemplo:* `yarn test src/auth/jsonwebtoken.spec.ts`<br>
+<div align="center">
+      <img align="center" alt="Coverage" src="https://github.com/padupe/template_node-ts-prisma-postgresql/blob/master/images/coverage.png">     
+</div>
 
 Para rodar um teste específico
 ```
 yarn test {path_to_test+file_name_whit_extension}
 ```
-*Exemplo:* `yarn test src/auth/jsonwebtoken.spec.ts`<br>
-<div align="center">
-      <img align="center" alt="Coverage" src="https://github.com/padupe/template_node-ts-prisma-postgresql/blob/master/images/coverage.png">     
-</div>
