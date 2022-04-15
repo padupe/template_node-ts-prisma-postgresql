@@ -6,11 +6,13 @@
   "scripts": {
     "dev": "ts-node-dev -r tsconfig-paths/register --exit-child --transpile-only --ignore-watch node_modules src/shared/infra/http/server.ts",
     "seed": "ts-node src/database/seed.ts",
+    "start": "yarn install && yarn docker:up && yarn prisma generate && yarn migrate:run && yarn seed && yarn dev",
     "migrate:run": "npx prisma migrate dev",
     "migrate:reset": "npx prisma migrate reset && ts-node src/database/seed.ts",
     "build": "swc src -d dist --source-maps --copy-files",
     "build:tsc": "tsc && tsc-alias",
-    "test": "NODE_ENV=test jest --runInBand --detectOpenHandles"
+    "test": "NODE_ENV=test jest --runInBand --detectOpenHandles",
+    "docker:up": "docker-compose -f docker/docker-compose.yaml --env-file docker/.env up -d"
   },
   "devDependencies": {
     "@swc/cli": "^0.1.57",
