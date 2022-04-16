@@ -4,6 +4,7 @@ import { IResponseFindUserByIdDTO } from "@modules/users/dtos/IResponseFindUserB
 import { IUsersRepository } from "@modules/users/repositories/IUsersRepository"
 import { AppError } from "@shared/errors/appError"
 import { inject, injectable } from "tsyringe"
+import { logging } from "utils/logging"
 
 
 @injectable()
@@ -20,8 +21,11 @@ export class FindUserByIdUseCase {
         const user = await this.usersRepository.findById(user_id)
 
         if(!user) {
+            logging.error(`findUserByIdUseCase: User not found by id: ${user_id}!`)
             throw new AppError("User not found!", 403)
         }
+
+        logging.debug("findUserByIdUseCase: Found User successfully")
 
         return {
             id: user.id,
