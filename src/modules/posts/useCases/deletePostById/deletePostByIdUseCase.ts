@@ -5,6 +5,7 @@ import { inject, injectable } from "tsyringe"
 import { AppError } from "@shared/errors/appError"
 import { ValidateAllowedAuthor } from "@validation/validateAllowedAuthor"
 import { IResponseDeletePostDTO } from "@modules/posts/dtos/IResponseDeletePostDTO"
+import { logging } from "utils/logging"
 
 @injectable()
 export class DeletePostByIdUseCase {
@@ -20,6 +21,7 @@ export class DeletePostByIdUseCase {
         const post = await this.postsRepository.find(post_id)
 
         if(!post) {
+            logging.error(`deletePostByIdUseCase: Post ${post_id} not found!`)
             throw new AppError("Post not found!", 400)
         }
 
@@ -27,6 +29,8 @@ export class DeletePostByIdUseCase {
         await ValidateAllowedAuthor(post.user.id, author_id)
 
         await this.postsRepository.delete(post.id)
+
+        logging.debug("deletePostByIdUseCase: Post deleted successfully")
 
         return {
             message: "Post deleted",
