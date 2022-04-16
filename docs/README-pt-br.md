@@ -134,6 +134,6 @@ yarn test --coverage
 
 Para rodar um teste específico
 ```
-yarn test {path_to_test+file_name_whit_extension}
+yarn test {caminho_para_o_teste+nome_do_arquivo_com_a_extensao}
 ```
 *Exemplo:* `yarn test src/auth/jsonwebtoken.spec.ts`<br>
