@@ -2,28 +2,30 @@
 # Template: API Node.js
 *Typescript - Prisma - PostgreSQL - Docker - Swagger - Jest*
 
-## MER (Modelo Entidade Relacionamento)
+> Check the Documentation in pt-br by clicking [here](https://github.com/padupe/template_node-ts-prisma-postgresql/blob/master/docs/README-pt-br.md 'here').
+
+## ERM (Entity Relationship Model)
 <div align="center">
       <img align="center" alt="MER-Template" src="https://github.com/padupe/template_node-ts-prisma-postgresql/blob/master/images/mer.png">     
 </div>
 
 
-## Fluxo de Resposta ao Cliente
+## Customer Response Flow
 <div align="center">
       <img align="center" alt="Fluxo-Template" src="https://github.com/padupe/template_node-ts-prisma-postgresql/blob/master/images/fluxo.drawio.png">     
 </div>
 
 
-## Utilizando a Aplicação
+## Using the Application
 
-**Requisitos**:
+**Requirements**:
 - Node.js >= 14.x;
 - Docker;
 - Yarn >= 1.22.x
 - Insomnia (Opcional)
 
-**Passo a passo**
-1. Clone este repositório:
+**Step by step**
+1. Clone this repository:
       > SSH
       ```
       git clone git@github.com:padupe/template_node-ts-prisma-postgresql.git
@@ -34,90 +36,96 @@
       git clone https://github.com/padupe/template_node-ts-prisma-postgresql.git
       ```
 
-2. Crie o arquivo `.env` na raiz do Projeto
+2. Create the `.env` file in the Project root
 
-3. Copie o código do `example.env` para o `.env`
+3. Copy the code from `example.env` to `.env`
 
-4. Expanda o diretório **`docker`**
+4. Expand the **`docker`** directory
 
-5. Crie o arquivo `.env`
+5. Create the `.env` file
 
-6. Copie o código do `example.env` para o `.env` criado no diretório **`docker`**
+6. Copy the code from the `example.env` to the `.env` created in the **`docker`** directory
 
-7. Instale as dependências
+7. Install dependencies
 ```
 yarn install
 ```
 
-8. Suba o contêiner do Banco de Dados
+8. Upload the Database container
 ```
 docker-compose -f docker/docker-compose.yaml --env-file docker/.env up -d
 ```
 
-9. Rode o comando para instanciar o Prisma
+9. Run the command to instantiate Prisma
 ```
 yarn prisma generate
 ```
 
-10. Rode o comando para rodar as migrations
+10. Run the command to run the migrations
 ```
 yarn migrate:run
 ```
 
-11. Popule o Banco de Dados
+11. Populate the Database
 ```
 yarn seed
 ```
 
-12. Rode a Aplicação
+12. Run the Application
 ```
 yarn dev
 ```
 
-### Documentação da API
+### API Documentation
 [Swagger](http://localhost:3000/docs/)<br>
-*IMPORTANTE:* É necessário rodar o comando `yarn dev`<br>
+*IMPORTANT:* It is necessary to run the command `yarn dev`<br>
 <div align="center">
       <img align="center" alt="Swagger" src="https://github.com/padupe/template_node-ts-prisma-postgresql/blob/master/images/swagger.png">     
 </div>
 
-### JSON para testes via Insomnia
-Realize o _import_ deste [arquivo](https://github.com/padupe/template_node-ts-prisma-postgresql/blob/master/insomnia/Insomnia.json "arquivo") no Insomnia.
+### JSON for testing via Insomnia
+Import this [file](https://github.com/padupe/template_node-ts-prisma-postgresql/blob/master/insomnia/Insomnia.json "file") into Insomnia.
 
-### Comandos Úteis
+### Useful Commands
 
 #### Docker
 ```
 docker-compose -f docker/docker-compose.yaml --env-file docker/.env up -d
 ```
 
-#### Aplicação
+#### Application
 
-Iniciar a Aplicação
+Start Application
 ```
 yarn dev
 ```
 
-Reset das Migrations e Banco Populado
+Reset of Migrations and Populated Database
 ```
 yarn migrate:reset
 ```
 
-#### Banco de Dados
+Express Start of the Application
+```
+yarn start
+```
+> All necessary commands are dynamically run
 
-Interface visual para gerenciamento do Banco de Dados:
+#### Database
+
+Visual interface for managing the Database:
 ```
 yarn prisma studio
 ```
 
-#### Testes Automatizados
+#### Automated Tests
 
-Para rodar todos os testes
+To run all tests
 ```
 yarn test
 ```
 
-Para verificar o coverage dos testes
+To check test coverage
 ```
 yarn test --coverage
 ```
@@ -126,8 +134,8 @@ yarn test --coverage
 </div>
 <br>
 
-Para rodar um teste específico
+To run a specific test
 ```
 yarn test {path_to_test+file_name_whit_extension}
 ```
-*Exemplo:* `yarn test src/auth/jsonwebtoken.spec.ts`<br>
+*Example:* `yarn test src/auth/jsonwebtoken.spec.ts`<br>
