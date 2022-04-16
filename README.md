@@ -8,6 +8,12 @@
 </div>
 
 
+## Fluxo de Resposta ao Cliente
+<div align="center">
+      <img align="center" alt="Fluxo-Template" src="https://github.com/padupe/template_node-ts-prisma-postgresql/blob/feat/implements-compiler-swc/images/fluxo.drawio.png">     
+</div>
+
+
 ## Utilizando a Aplicação
 
 **Requisitos**:
