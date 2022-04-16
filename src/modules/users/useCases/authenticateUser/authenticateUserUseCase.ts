@@ -8,6 +8,8 @@ import { IUsersRepository } from "@modules/users/repositories/IUsersRepository";
 import { validateBodyAuth } from "@validation/validateBodyAuth";
 import { inject, injectable } from "tsyringe"
 import { AppError } from "@shared/errors/appError";
+import { logging } from "utils/logging";
+import { loggers } from "winston";
 
 @injectable()
 export class AuthenticateUserUseCase {
@@ -18,13 +20,14 @@ export class AuthenticateUserUseCase {
 
     async execute({ username, password }: IAuthenticateUserDTO): Promise<IResponseAuthenticateUserDTO>{
 
-        validateBodyAuth(username, password)
+        validateBodyAuth(username, password)        
 
         const { secret_key, options } = auth
 
         const user = await this.usersRepository.findByUsername(username)
 
         if(!user) {
+            logging.error("authenticateUserUseCase: User or Password Invalids")
             throw new AppError("User or Password Invalids", 401)
         }
 
@@ -39,6 +42,8 @@ export class AuthenticateUserUseCase {
             expiresIn: options.expiresIn,
             subject: userID,
         })
+
+        logging.debug("authenticateUserUseCase: User registered at App.")
 
         return {
             message: "User registered at App",

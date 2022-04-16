@@ -4,6 +4,7 @@ import { IResponseFindPostByIdDTO } from "@modules/posts/dtos/IResponseFindPostB
 import { inject, injectable } from "tsyringe"
 import { IPostsRepository } from "@modules/posts/repositories/IPostsRepository"
 import { AppError } from "@shared/errors/appError"
+import { logging } from "utils/logging"
 
 @injectable()
 export class FindPostByIdUseCase {
@@ -19,8 +20,11 @@ export class FindPostByIdUseCase {
         const post = await this.postsRepository.find(post_id)
 
         if(!post){
+            logging.error(`findPostByIdUseCase: Post ${post_id} not found!`)
             throw new AppError("Post not found!", 400)
         }
+
+        logging.debug("findPostByIdUseCase: Found Post successfully")
 
         return {
             id: post.id,
