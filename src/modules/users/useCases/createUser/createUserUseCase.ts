@@ -6,6 +6,7 @@ import { IUsersRepository } from "@modules/users/repositories/IUsersRepository";
 import { AppError } from "@shared/errors/appError";
 import { inject, injectable } from "tsyringe";
 import { validateBodyCreateUser } from "@validation/validateBodyUsers";
+import { logging } from "utils/logging";
 
 @injectable()
 export class CreateUserUseCase {
@@ -17,11 +18,14 @@ export class CreateUserUseCase {
     async execute({ name, username, email, password }: ICreateUserDTO): Promise<IResponseCreateUserDTO> {
         
         validateBodyCreateUser({name, username, email, password})
+
+        logging.debug(`createUseUseCase: name: ${name} | username: ${username} | email: ${email}.`)
         
         const usernameExists = await this.usersRepository.findByUsername(username)
         const emailExists = await this.usersRepository.findByEmail(email)
 
         if(usernameExists || emailExists) {
+            logging.error("createUseUseCase: User already exists!")
             throw new AppError("User already exists!")
         }
 
@@ -31,6 +35,8 @@ export class CreateUserUseCase {
             email,
             password: await hashPassword(password)
         })
+
+        logging.debug("createUseUseCase: New User Registered!")
 
         return {
             message: "User registered",
