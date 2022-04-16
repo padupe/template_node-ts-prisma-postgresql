@@ -5,6 +5,7 @@ import { inject, injectable } from "tsyringe"
 import { IResponseCreatePostDTO } from "@modules/posts/dtos/IResponseCreatePostDTO"
 import { validateBodyPosts } from "@validation/validateBodyPosts"
 import { validateAuthorId } from "@validation/validateAuthorId"
+import { logging } from "utils/logging"
 
 @injectable()
 export class CreatePostUseCase {
@@ -17,6 +18,8 @@ export class CreatePostUseCase {
 
         validateBodyPosts(title)
 
+        logging.debug(`createPostUseCase: title: ${title} | author_id: ${author_id}.`)
+
         const post = await this.postsRepository.create({
             title,
             author_id
@@ -25,6 +28,8 @@ export class CreatePostUseCase {
         const author: string = author_id !== undefined ? author_id : ""
 
         const user = await validateAuthorId(author)
+
+        logging.debug("createPostUseCase: New Post Registered")
 
         return {
             message: "Post registered",
