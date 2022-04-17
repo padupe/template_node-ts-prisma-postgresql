@@ -1,6 +1,6 @@
 ![img](https://github.com/padupe/template_node-ts-prisma-postgresql/blob/master/images/template.svg)
-# Template: API Node.js
-*Typescript - Prisma - PostgreSQL - Docker - Swagger - Jest*
+# Template: API [Node.js](https://nodejs.org/en/ 'Node.js')
+*[Typescript](https://www.typescriptlang.org/ 'Typescript') - [Prisma](https://www.prisma.io/ 'Prisma') - [PostgreSQL](https://www.postgresql.org/ 'PostgreSQL') - [Docker](https://www.docker.com/ 'Docker') - [Swagger](https://swagger.io/ 'Swagger') - [Jest](https://jestjs.io/ 'Jest')*
 
 > Check the Documentation in pt-br by clicking [here](https://github.com/padupe/template_node-ts-prisma-postgresql/blob/master/docs/README-pt-br.md 'here').
 
@@ -14,6 +14,18 @@
 <div align="center">
       <img align="center" alt="Fluxo-Template" src="https://github.com/padupe/template_node-ts-prisma-postgresql/blob/master/images/fluxo.drawio.png">     
 </div>
+
+
+## Project Dependencies
+- [bcrypt](https://www.npmjs.com/package/bcrypt 'bcrypt'): A library to help you hash passwords;<br>
+- [dotenv](https://www.npmjs.com/package/dotenv 'dotenv'): Dotenv is a zero-dependency module that loads environment variables from a `.env` file into `process.env`;<br>
+- [express](https://expressjs.com/ 'express'): Express is a minimal and flexible Node.js web application framework that provides a robust set of features for web and mobile applications;<br>
+- [express-async-errors](https://www.npmjs.com/package/express-async-errors 'express-async-errors'): A simple ES6 async/await support hack for ExpressJS;<br>
+- [jsonwebtoken](https://www.npmjs.com/package/jsonwebtoken 'jsonwebtoken'): An implementation of JSON Web Tokens;<br>
+- [reflect-metadata](https://www.npmjs.com/package/reflect-metadata 'reflect-metadata'): A library that serves multiple use cases (dependency composition/injection, runtime type assertions, reflection/mirroring, testing) wants the ability to add additional metadata to a class in a consistent way;<br>
+- [swagger-ui-express]( 'swagger-ui-express'): This module allows you to serve auto-generated swagger-ui generated API docs from express, based on a `swagger.json` file. The result is living documentation for your API hosted from your API server via a route.;<br>
+- [tsyringe](https://www.npmjs.com/package/tsyringe 'tsyringe'): A lightweight dependency injection container for TypeScript/JavaScript for constructor injection.;<br>
+- [winston](https://www.npmjs.com/package/winston 'winston'): A log logger.<br>
 
 
 ## Using the Application
