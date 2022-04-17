@@ -1,6 +1,6 @@
 ![img](https://github.com/padupe/template_node-ts-prisma-postgresql/blob/master/images/template.svg)
-# Template: API Node.js
-*Typescript - Prisma - PostgreSQL - Docker - Swagger - Jest*
+# Template: API [Node.js](https://nodejs.org/pt-br/ 'Node.js')
+*[Typescript](https://www.typescriptlang.org/pt/ 'Typescript') - [Prisma](https://www.prisma.io/ 'Prisma') - [PostgreSQL](https://www.postgresql.org/ 'PostgreSQL') - [Docker](https://www.docker.com/ 'Docker') - [Swagger](https://swagger.io/ 'Swagger') - [Jest](https://jestjs.io/pt-BR/ 'Jest')*
 
 ## MER (Modelo Entidade Relacionamento)
 <div align="center">
@@ -12,6 +12,18 @@
 <div align="center">
       <img align="center" alt="Fluxo-Template" src="https://github.com/padupe/template_node-ts-prisma-postgresql/blob/master/images/fluxo.drawio.png">     
 </div>
+
+
+## Dependências do Projeto
+- [bcrypt](https://www.npmjs.com/package/bcrypt 'bcrypt'): Uma biblioteca para ajudá-lo a fazer hash de senhas<br>
+- [dotenv](https://www.npmjs.com/package/dotenv 'dotenv'): Dotenv é um módulo de dependência zero que carrega variáveis ​​de ambiente de um arquivo `.env` para `process.env`;<br>
+- [express](https://expressjs.com/pt-br/ 'express'): O Express é um framework para aplicativo da web do Node.js mínimo e flexível que fornece um conjunto robusto de recursos para aplicativos web e móvel;<br>
+- [express-async-errors](https://www.npmjs.com/package/express-async-errors 'express-async-errors'): Um hack de suporte async/await ES6 simples para ExpressJS;<br>
+- [jsonwebtoken](https://www.npmjs.com/package/jsonwebtoken 'jsonwebtoken'): Uma implementação de JSON Web Tokens;<br>
+- [reflect-metadata](https://www.npmjs.com/package/reflect-metadata 'reflect-metadata'): Uma biblioteca que atende vários casos de uso (composição/injeção de dependência, asserções de tipo de tempo de execução, reflexão/espelhamento, teste) desejam a capacidade de adicionar metadados adicionais a uma classe de maneira consistente;<br>
+- [swagger-ui-express](https://www.npmjs.com/package/swagger-ui-express 'swagger-ui-express'): Este módulo permite veicular documentos de API gerados automaticamente por swagger-ui do express, com base em um arquivo `swagger.json`. O resultado é uma documentação viva para sua API hospedada em seu servidor por meio de uma rota;<br>
+- [tsyringe](https://www.npmjs.com/package/tsyringe 'tsyringe'): Um contêiner de injeção de dependência para TypeScript/JavaScript para injeção no construtor;<br>
+- [winston](https://www.npmjs.com/package/winston 'winston'): Um registrador de logs.<br>
 
 
 ## Utilizando a Aplicação
