@@ -23,7 +23,7 @@
 - [express-async-errors](https://www.npmjs.com/package/express-async-errors 'express-async-errors'): A simple ES6 async/await support hack for ExpressJS;<br>
 - [jsonwebtoken](https://www.npmjs.com/package/jsonwebtoken 'jsonwebtoken'): An implementation of JSON Web Tokens;<br>
 - [reflect-metadata](https://www.npmjs.com/package/reflect-metadata 'reflect-metadata'): A library that serves multiple use cases (dependency composition/injection, runtime type assertions, reflection/mirroring, testing) wants the ability to add additional metadata to a class in a consistent way;<br>
-- [swagger-ui-express]( 'swagger-ui-express'): This module allows you to serve auto-generated swagger-ui generated API docs from express, based on a `swagger.json` file. The result is living documentation for your API hosted from your API server via a route.;<br>
+- [swagger-ui-express]( 'swagger-ui-express'): This module allows you to serve auto-generated swagger-ui generated API docs from express, based on a `swagger.json` file. The result is living documentation for your API hosted from your API server via a route;<br>
 - [tsyringe](https://www.npmjs.com/package/tsyringe 'tsyringe'): A lightweight dependency injection container for TypeScript/JavaScript for constructor injection.;<br>
 - [winston](https://www.npmjs.com/package/winston 'winston'): A log logger.<br>
 
