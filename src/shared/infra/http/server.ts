@@ -1,4 +1,4 @@
-import { logging } from "utils/logging"
+import { logging } from "@utils/logging"
 import { app } from "./app"
 
 app.listen(3000, () => {
