@@ -12,7 +12,8 @@
       "@errors/*": ["errors/*"],
       "@auth/*": ["auth/*"],
       "@validation/*": ["validation/*"],
-      "@middlewares/*": ["middlewares/*"]
+      "@middlewares/*": ["middlewares/*"],
+      "@utils/*": ["utils/*"]
     },
     "sourceMap": true,
     "outDir": "dist",
