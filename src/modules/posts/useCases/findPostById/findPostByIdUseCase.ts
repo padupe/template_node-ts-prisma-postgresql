@@ -4,7 +4,7 @@ import { IResponseFindPostByIdDTO } from "@modules/posts/dtos/IResponseFindPostB
 import { inject, injectable } from "tsyringe"
 import { IPostsRepository } from "@modules/posts/repositories/IPostsRepository"
 import { AppError } from "@shared/errors/appError"
-import { logging } from "utils/logging"
+import { logging } from "@utils/logging"
 
 @injectable()
 export class FindPostByIdUseCase {
