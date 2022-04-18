@@ -2,6 +2,14 @@
 # Template: API [Node.js](https://nodejs.org/pt-br/ 'Node.js')
 *[Typescript](https://www.typescriptlang.org/pt/ 'Typescript') - [Prisma](https://www.prisma.io/ 'Prisma') - [PostgreSQL](https://www.postgresql.org/ 'PostgreSQL') - [Docker](https://www.docker.com/ 'Docker') - [Swagger](https://swagger.io/ 'Swagger') - [Jest](https://jestjs.io/pt-BR/ 'Jest')*
 
+# Entre em Contato com o Desenvolvedor
+<div align="center">
+      <a href="https://www.linkedin.com/in/paulo-eduardo-peixoto-2155a866/" target="_blank"><img src="https://img.shields.io/badge/LinkedIn-0077B5?style=for-the-badge&logo=linkedin&logoColor=white" target="_blank"></a>
+      <a href="mailto:peixoto.pauloeduardo@gmail.com" target="_blank"><img src="https://img.shields.io/badge/Gmail-D14836?style=for-the-badge&logo=gmail&logoColor=white" target="_blank"></a>
+      <a href="https://github.com/padupe" target="_blank"><img src="https://img.shields.io/badge/GitHub-100000?style=for-the-badge&logo=github&logoColor=white" target="_blank"></a>
+</div>
+
+
 ## MER (Modelo Entidade Relacionamento)
 <div align="center">
       <img align="center" alt="MER-Template" src="https://github.com/padupe/template_node-ts-prisma-postgresql/blob/master/images/mer.png">     
@@ -26,13 +34,24 @@
 - [winston](https://www.npmjs.com/package/winston 'winston'): Um registrador de logs.<br>
 
 
+## Ferramentas Utilizadas
+- **Documentação da API:** Swagger;<br>
+- **Compilador**: [SWC](https://swc.rs/ 'SWC');<br>
+- **Contêiner:** Docker;<br>
+- **Criptografia:** Bcrypt;<br>
+- **Registro:** Winston;<br>
+- **ORM:** Prisma;<br>
+- **Testes:** Jest e [Supertest](https://www.npmjs.com/package/supertest 'Supertest');<br>
+- **Token:** JWT.<br>
+
+
 ## Utilizando a Aplicação
 
 **Requisitos**:
 - Node.js >= 14.x;
 - Docker;
-- Yarn >= 1.22.x
-- Insomnia (Opcional)
+- [Yarn](https://yarnpkg.com/ 'Yarn') >= 1.22.x
+- [Insomnia](https://insomnia.rest/ 'Insomnia') (Opcional)
 
 **Passo a passo**
 1. Clone este repositório:
