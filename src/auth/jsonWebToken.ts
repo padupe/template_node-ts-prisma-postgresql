@@ -1,5 +1,5 @@
 import { sign, verify } from "jsonwebtoken"
-import { logging } from "utils/logging"
+import { logging } from "@utils/logging"
 
 export function signJWT(payload: object, secret_key: string, options: object) {
 
