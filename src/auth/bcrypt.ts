@@ -1,6 +1,6 @@
 import { AppError } from "../shared/errors/appError"
 import { hash, compare } from "bcrypt"
-import { logging } from "utils/logging"
+import { logging } from "@utils/logging"
 
 export async function hashPassword(password: string) {
     return await hash(password, 10)
