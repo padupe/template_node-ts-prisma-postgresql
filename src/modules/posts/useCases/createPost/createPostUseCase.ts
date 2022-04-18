@@ -5,7 +5,7 @@ import { inject, injectable } from "tsyringe"
 import { IResponseCreatePostDTO } from "@modules/posts/dtos/IResponseCreatePostDTO"
 import { validateBodyPosts } from "@validation/validateBodyPosts"
 import { validateAuthorId } from "@validation/validateAuthorId"
-import { logging } from "utils/logging"
+import { logging } from "@utils/logging"
 
 @injectable()
 export class CreatePostUseCase {
