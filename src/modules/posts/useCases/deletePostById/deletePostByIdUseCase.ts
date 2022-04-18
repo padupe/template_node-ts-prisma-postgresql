@@ -5,7 +5,7 @@ import { inject, injectable } from "tsyringe"
 import { AppError } from "@shared/errors/appError"
 import { ValidateAllowedAuthor } from "@validation/validateAllowedAuthor"
 import { IResponseDeletePostDTO } from "@modules/posts/dtos/IResponseDeletePostDTO"
-import { logging } from "utils/logging"
+import { logging } from "@utils/logging"
 
 @injectable()
 export class DeletePostByIdUseCase {
