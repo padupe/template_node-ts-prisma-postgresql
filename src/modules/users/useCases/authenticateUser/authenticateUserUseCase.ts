@@ -8,7 +8,7 @@ import { IUsersRepository } from "@modules/users/repositories/IUsersRepository";
 import { validateBodyAuth } from "@validation/validateBodyAuth";
 import { inject, injectable } from "tsyringe"
 import { AppError } from "@shared/errors/appError";
-import { logging } from "utils/logging";
+import { logging } from "@utils/logging";
 import { loggers } from "winston";
 
 @injectable()
