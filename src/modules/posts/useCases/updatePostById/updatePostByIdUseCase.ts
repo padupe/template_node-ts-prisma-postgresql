@@ -6,7 +6,7 @@ import { validateParamString } from "@validation/validateParam"
 import { AppError } from "@shared/errors/appError"
 import { ValidateAllowedAuthor } from "@validation/validateAllowedAuthor"
 import { validateBodyPosts } from "@validation/validateBodyPosts"
-import { logging } from "utils/logging"
+import { logging } from "@utils/logging"
 
 @injectable()
 export class UpdatePostByIdUseCase {
