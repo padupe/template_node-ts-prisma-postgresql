@@ -39,7 +39,7 @@
 - **Compilador**: [SWC](https://swc.rs/ 'SWC');<br>
 - **Contêiner:** Docker;<br>
 - **Criptografia:** Bcrypt;<br>
-- **Registro:** Winston;<br>
+- **Registro de Logs:** Winston;<br>
 - **ORM:** Prisma;<br>
 - **Testes:** Jest e [Supertest](https://www.npmjs.com/package/supertest 'Supertest');<br>
 - **Token:** JWT.<br>
