@@ -4,7 +4,7 @@ import { IResponseFindUserDTO } from "@modules/users/dtos/IResponseFindUserDTO"
 import { IUsersRepository } from "@modules/users/repositories/IUsersRepository"
 import { AppError } from "@shared/errors/appError"
 import { inject, injectable } from "tsyringe"
-import { logging } from "utils/logging"
+import { logging } from "@utils/logging"
 
 interface IFindUserByUsername {
     username: string;
