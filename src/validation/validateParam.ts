@@ -1,5 +1,5 @@
 import { AppError } from "@shared/errors/appError";
-import { logging } from "utils/logging";
+import { logging } from "@utils/logging";
 
 export function validateParamString(param: string) {
 
