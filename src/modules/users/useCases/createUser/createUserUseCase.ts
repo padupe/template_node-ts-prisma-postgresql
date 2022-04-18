@@ -6,7 +6,7 @@ import { IUsersRepository } from "@modules/users/repositories/IUsersRepository";
 import { AppError } from "@shared/errors/appError";
 import { inject, injectable } from "tsyringe";
 import { validateBodyCreateUser } from "@validation/validateBodyUsers";
-import { logging } from "utils/logging";
+import { logging } from "@utils/logging";
 
 @injectable()
 export class CreateUserUseCase {
