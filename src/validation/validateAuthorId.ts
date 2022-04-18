@@ -1,6 +1,6 @@
 import { UsersRepository } from "@modules/users/infra/prisma/repositories/UsersRepository";
 import { AppError } from "@shared/errors/appError";
-import { logging } from "utils/logging";
+import { logging } from "@utils/logging";
 
 export async function validateAuthorId(author_id: string) {
 
