@@ -1,16 +1,16 @@
 ![img](https://github.com/padupe/template_node-ts-prisma-postgresql/blob/master/images/template.svg)
 # Template: API [Node.js](https://nodejs.org/en/ 'Node.js')
 *[Typescript](https://www.typescriptlang.org/ 'Typescript') - [Prisma](https://www.prisma.io/ 'Prisma') - [PostgreSQL](https://www.postgresql.org/ 'PostgreSQL') - [Docker](https://www.docker.com/ 'Docker') - [Swagger](https://swagger.io/ 'Swagger') - [Jest](https://jestjs.io/ 'Jest')*
+> Check the Documentation in pt-br by clicking [here](https://github.com/padupe/template_node-ts-prisma-postgresql/blob/master/docs/README-pt-br.md 'here').
 
-# Contact the Developer
+
+## Contact the Developer
 <div align="center">
       <a href="https://www.linkedin.com/in/paulo-eduardo-peixoto-2155a866/" target="_blank"><img src="https://img.shields.io/badge/LinkedIn-0077B5?style=for-the-badge&logo=linkedin&logoColor=white" target="_blank"></a>
       <a href="mailto:peixoto.pauloeduardo@gmail.com" target="_blank"><img src="https://img.shields.io/badge/Gmail-D14836?style=for-the-badge&logo=gmail&logoColor=white" target="_blank"></a>
       <a href="https://github.com/padupe" target="_blank"><img src="https://img.shields.io/badge/GitHub-100000?style=for-the-badge&logo=github&logoColor=white" target="_blank"></a>
 </div>
 
-
-> Check the Documentation in pt-br by clicking [here](https://github.com/padupe/template_node-ts-prisma-postgresql/blob/master/docs/README-pt-br.md 'here').
 
 ## ERM (Entity Relationship Model)
 <div align="center">
