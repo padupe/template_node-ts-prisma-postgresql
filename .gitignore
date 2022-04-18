@@ -4,3 +4,4 @@ yarn.lock
 docker/.env
 dist/
 src/logs/
+coverage/
