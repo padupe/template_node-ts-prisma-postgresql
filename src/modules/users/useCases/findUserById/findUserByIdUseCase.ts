@@ -4,7 +4,7 @@ import { IResponseFindUserByIdDTO } from "@modules/users/dtos/IResponseFindUserB
 import { IUsersRepository } from "@modules/users/repositories/IUsersRepository"
 import { AppError } from "@shared/errors/appError"
 import { inject, injectable } from "tsyringe"
-import { logging } from "utils/logging"
+import { logging } from "@utils/logging"
 
 
 @injectable()
