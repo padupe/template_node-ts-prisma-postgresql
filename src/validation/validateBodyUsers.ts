@@ -1,6 +1,6 @@
 import { ICreateUserDTO } from "@modules/users/dtos/ICreateUserDTO";
 import { AppError } from "@shared/errors/appError";
-import { logging } from "utils/logging";
+import { logging } from "@utils/logging";
 
 export function validateBodyCreateUser({ name, username, email, password }: ICreateUserDTO) {
 
