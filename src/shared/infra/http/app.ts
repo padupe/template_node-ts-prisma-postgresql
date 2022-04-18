@@ -7,7 +7,7 @@ import '@shared/container'
 import { AppError } from "@shared/errors/appError"
 import { router } from "./routes"
 import swaggerConfig from "../../../swagger.json"
-import { logging } from "utils/logging"
+import { logging } from "@utils/logging"
 
 export const app = express()
 
