@@ -50,8 +50,8 @@
 **Requisitos**:
 - Node.js >= 14.x;
 - Docker;
-- [Yarn](https://yarnpkg.com/ 'Yarn') >= 1.22.x
-- [Insomnia](https://insomnia.rest/ 'Insomnia') (Opcional)
+- [Yarn](https://yarnpkg.com/ 'Yarn') >= 1.22.x;
+- [Insomnia](https://insomnia.rest/ 'Insomnia') (Opcional).
 
 **Passo a passo**
 1. Clone este repositório:
@@ -142,7 +142,7 @@ yarn start
 
 #### Banco de Dados
 
-Interface visual para gerenciamento do Banco de Dados:
+Interface visual para gerenciamento do Banco de Dados
 ```
 yarn prisma studio
 ```
