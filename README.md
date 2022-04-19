@@ -1,7 +1,7 @@
 ![img](https://github.com/padupe/template_node-ts-prisma-postgresql/blob/master/images/template.svg)
 # Template: API [Node.js](https://nodejs.org/en/ 'Node.js')
 *[Typescript](https://www.typescriptlang.org/ 'Typescript') - [Prisma](https://www.prisma.io/ 'Prisma') - [PostgreSQL](https://www.postgresql.org/ 'PostgreSQL') - [Docker](https://www.docker.com/ 'Docker') - [Swagger](https://swagger.io/ 'Swagger') - [Jest](https://jestjs.io/ 'Jest')*
-> Check the Documentation in pt-br by clicking [here](https://github.com/padupe/template_node-ts-prisma-postgresql/blob/master/docs/README-pt-br.md 'here').
+> Check the Documentation in pt-br by clicking [here](https://github.com/padupe/template_node-ts-prisma-postgresql/blob/master/docs/README-pt-br.md 'here')🇧🇷.
 
 
 ## Contact the Developer
