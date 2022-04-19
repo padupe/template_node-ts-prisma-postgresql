@@ -52,8 +52,8 @@
 **Requirements**:
 - Node.js >= 14.x;
 - Docker;
-- [Yarn](https://yarnpkg.com/ 'Yarn') >= 1.22.x
-- [Insomnia](https://insomnia.rest/ 'Insomnia') (Opcional)
+- [Yarn](https://yarnpkg.com/ 'Yarn') >= 1.22.x;
+- [Insomnia](https://insomnia.rest/ 'Insomnia') (Optional).
 
 **Step by step**
 1. Clone this repository:
@@ -144,7 +144,7 @@ yarn start
 
 #### Database
 
-Visual interface for managing the Database:
+Visual interface for managing the Database
 ```
 yarn prisma studio
 ```
