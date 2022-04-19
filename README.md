@@ -41,6 +41,7 @@
 - **Compiler**: [SWC](https://swc.rs/ 'SWC');<br>
 - **Container:** Docker;<br>
 - **Crypto:** Bcrypt;<br>
+- **Database:** PostgreSQL;<br>
 - **Logger:** Winston;<br>
 - **ORM:** Prisma;<br>
 - **Tests:** Jest and [Supertest](https://www.npmjs.com/package/supertest 'Supertest');<br>
