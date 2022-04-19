@@ -35,12 +35,13 @@
 
 
 ## Ferramentas Utilizadas
-- **Documentação da API:** Swagger;<br>
+- **Banco de Dados:** PostgreSQL;<br>
 - **Compilador**: [SWC](https://swc.rs/ 'SWC');<br>
 - **Contêiner:** Docker;<br>
 - **Criptografia:** Bcrypt;<br>
-- **Registro de Logs:** Winston;<br>
+- **Documentação da API:** Swagger;<br>
 - **ORM:** Prisma;<br>
+- **Registro de Logs:** Winston;<br>
 - **Testes:** Jest e [Supertest](https://www.npmjs.com/package/supertest 'Supertest');<br>
 - **Token:** JWT.<br>
 
