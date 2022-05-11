@@ -9,6 +9,20 @@
       <a href="https://github.com/padupe" target="_blank"><img src="https://img.shields.io/badge/GitHub-100000?style=for-the-badge&logo=github&logoColor=white" target="_blank"></a>
 </div>
 
+## Índice
+- [Entre em Contato com o Desenvolvedor](#entre-em-contato-com-o-desenvolvedor)
+- [MER (Modelo Entidade Relacionamento)](#mer-modelo-entidade-relacionamento)
+- [Fluxo de Resposta ao Cliente](#fluxo-de-resposta-ao-cliente)
+- [Dependências do Projeto](#dependências-do-projeto)
+- [Ferramentas Utilizadas](#ferramentas-utilizadas)
+- [Utilizando a Aplicação](#utilizando-a-aplicação)
+  - [Documentação da API](#documentação-da-api)
+  - [JSON para testes via Insomnia](#json-para-testes-via-insomnia)
+  - [Comandos Úteis](#comandos-úteis)
+    - [Docker](#docker)
+    - [Aplicação](#aplicação)
+    - [Banco de Dados](#banco-de-dados)
+    - [Testes Automatizados](#testes-automatizados)
 
 ## MER (Modelo Entidade Relacionamento)
 <div align="center">

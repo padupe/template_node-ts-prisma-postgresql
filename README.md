@@ -11,6 +11,21 @@
       <a href="https://github.com/padupe" target="_blank"><img src="https://img.shields.io/badge/GitHub-100000?style=for-the-badge&logo=github&logoColor=white" target="_blank"></a>
 </div>
 
+## Index
+- [Contact the Developer](#contact-the-developer)
+- [ERM (Entity Relationship Model)](#erm-entity-relationship-model)
+- [Customer Response Flow](#customer-response-flow)
+- [Project Dependencies](#project-dependencies)
+- [Tools Used](#tools-used)
+- [Using the Application](#using-the-application)
+  - [Api Documentation](#api-documentation)
+  - [JSON for testing via Insomnia](#json-for-testing-via-insomnia)
+  - [Useful Comands](#useful-commands)
+    - [Docker](#docker)
+    - [Application](#application)
+    - [Database](#database)
+    - [Automated Tests](#automated-tests)
+
 
 ## ERM (Entity Relationship Model)
 <div align="center">
