@@ -1,4 +1,4 @@
-![img](https://github.com/padupe/template_node-ts-prisma-postgresql/blob/master/images/template.svg)
+![img](https://github.com/padupe/template_node-ts-prisma-postgresql/blob/master/assets/template.svg)
 # Template: API [Node.js](https://nodejs.org/pt-br/ 'Node.js')
 *[Typescript](https://www.typescriptlang.org/pt/ 'Typescript') - [Prisma](https://www.prisma.io/ 'Prisma') - [PostgreSQL](https://www.postgresql.org/ 'PostgreSQL') - [Docker](https://www.docker.com/ 'Docker') - [Swagger](https://swagger.io/ 'Swagger') - [Jest](https://jestjs.io/pt-BR/ 'Jest')*
 
@@ -26,13 +26,13 @@
 
 ## MER (Modelo Entidade Relacionamento)
 <div align="center">
-      <img align="center" alt="MER-Template" src="https://github.com/padupe/template_node-ts-prisma-postgresql/blob/master/images/mer.png">     
+      <img align="center" alt="MER-Template" src="https://github.com/padupe/template_node-ts-prisma-postgresql/blob/master/assets/mer.png">     
 </div>
 
 
 ## Fluxo de Resposta ao Cliente
 <div align="center">
-      <img align="center" alt="Fluxo-Template" src="https://github.com/padupe/template_node-ts-prisma-postgresql/blob/master/images/fluxo.drawio.png">     
+      <img align="center" alt="Fluxo-Template" src="https://github.com/padupe/template_node-ts-prisma-postgresql/blob/master/assets/fluxo.drawio.png">     
 </div>
 
 
@@ -124,7 +124,7 @@ yarn dev
 [Swagger](http://localhost:3000/docs/)<br>
 *IMPORTANTE:* É necessário rodar o comando `yarn dev`<br>
 <div align="center">
-      <img align="center" alt="Swagger" src="https://github.com/padupe/template_node-ts-prisma-postgresql/blob/master/images/swagger.png">     
+      <img align="center" alt="Swagger" src="https://github.com/padupe/template_node-ts-prisma-postgresql/blob/master/assets/swagger.png">     
 </div>
 
 ### JSON para testes via Insomnia
@@ -174,7 +174,7 @@ Para verificar o coverage dos testes
 yarn test --coverage
 ```
 <div align="center">
-      <img align="center" alt="Coverage" src="https://github.com/padupe/template_node-ts-prisma-postgresql/blob/master/images/coverage.png">     
+      <img align="center" alt="Coverage" src="https://github.com/padupe/template_node-ts-prisma-postgresql/blob/master/assets/coverage.png">     
 </div>
 <br>
 
