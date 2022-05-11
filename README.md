@@ -13,13 +13,13 @@
 
 ## Index
 - [Contact the Developer](#contact-the-developer)
-- [ERM (Entity Relationship Model)](erm-entity-relationship-model)
+- [ERM (Entity Relationship Model)](#erm-entity-relationship-model)
 - [Customer Response Flow](#customer-response-flow)
 - [Project Dependencies](#project-dependencies)
 - [Tools Used](#tools-used)
 - [Using the Application](#using-the-application)
   - [Api Documentation](#api-documentation)
-  - [JSON for testing via Insomnia](json-for-testing-via-insomnia)
+  - [JSON for testing via Insomnia](#json-for-testing-via-insomnia)
   - [Useful Comands](#useful-commands)
     - [Docker](#docker)
     - [Application](#application)
