@@ -9,6 +9,27 @@
         }
     },
     "paths": {
+        "/alive": {
+            "get": {
+                "tags": [
+                    "Alive"
+                ],
+                "summary": "Verify health API.",
+                "description": "Endpoint for verify health",
+                "responses": {
+                    "200": {
+                        "description": "List Users",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#definitions/Alive"
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        },
         "/users": {
             "post": {
                 "tags": [
@@ -633,6 +654,15 @@
         }
     },
     "definitions": {
+        "Alive": {
+            "type": "object",
+            "properties": {
+                "message": "string"
+            },
+            "example": {
+                "message": "I'm alive"
+            }
+        },
         "Email": {
             "type": "string",
             "example": "usertest@email.com"
