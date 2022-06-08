@@ -3,6 +3,22 @@
 *[Typescript](https://www.typescriptlang.org/ 'Typescript') - [Prisma](https://www.prisma.io/ 'Prisma') - [PostgreSQL](https://www.postgresql.org/ 'PostgreSQL') - [Docker](https://www.docker.com/ 'Docker') - [Swagger](https://swagger.io/ 'Swagger') - [Jest](https://jestjs.io/ 'Jest')*
 > Check the Documentation in pt-br by clicking 🇧🇷 [here](https://github.com/padupe/template_node-ts-prisma-postgresql/blob/master/docs/README-pt-br.md 'here').
 
+<div align="center">
+
+![img](https://img.shields.io/badge/%40prisma%2Fclient-v3.11.1-blue)
+![img](https://img.shields.io/badge/bcrypt-v5.0.1-blue)
+![img](https://img.shields.io/badge/dotenv-v16.0.0-blue)
+![img](https://img.shields.io/badge/express-v4.17.3-blue)
+![img](https://img.shields.io/badge/express--async--errors-v3.1.1-blue)
+![img](https://img.shields.io/badge/jsonwebtoken-v8.5.1-blue)
+![img](https://img.shields.io/badge/reflect--metadata-v0.1.13-blue)
+![img](https://img.shields.io/badge/swagger--ui--express-v4.3.0-blue)
+![img](https://img.shields.io/badge/ts--node-v10.7.0-blue)
+![img](https://img.shields.io/badge/tsyringe-v4.6.0-blue)
+![img](https://img.shields.io/badge/winston-v3.7.2-blue)
+
+</div>
+
 
 ## Contact the Developer
 <div align="center">
